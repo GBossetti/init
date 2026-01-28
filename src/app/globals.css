@@ -90,3 +90,69 @@ code {
   background: var(--accent);
   color: white;
 }
+
+/* Slide container - full page scroll snap */
+.slide-container {
+  height: 100dvh;
+  overflow-y: scroll;
+  scroll-snap-type: y proximity;
+  overscroll-behavior: none;
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for slide container */
+.slide-container::-webkit-scrollbar {
+  display: none;
+}
+
+.slide-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Individual slide */
+.slide {
+  min-height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Dot navigation positioning */
+.dot-nav {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+
+/* Ken Burns animation fallback */
+@keyframes ken-burns {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.ken-burns {
+  animation: ken-burns 20s ease-in-out infinite;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .slide-container {
+    scroll-behavior: auto;
+  }
+
+  .ken-burns {
+    animation: none;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

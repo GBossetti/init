@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { PageLayout } from '@/components/PageLayout';
 
 // Placeholder data - will be replaced with Velite
 const posts = [
@@ -80,6 +81,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   return (
+    <PageLayout>
     <div className="mx-auto max-w-3xl px-6 py-20">
       <Link
         href="/blog"
@@ -126,5 +128,6 @@ export default async function BlogPostPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
     </div>
+    </PageLayout>
   );
 }

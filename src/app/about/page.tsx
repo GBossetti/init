@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import Link from 'next/link';
+import { PageLayout } from '@/components/PageLayout';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
+    <PageLayout>
     <div className="mx-auto max-w-3xl px-6 py-20">
       <h1 className="mb-8 text-4xl font-bold tracking-tight text-foreground">
         About Me
@@ -127,5 +129,6 @@ export default function AboutPage() {
         </section>
       </div>
     </div>
+    </PageLayout>
   );
 }

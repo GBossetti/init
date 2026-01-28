@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { PageLayout } from '@/components/PageLayout';
 
 // Placeholder data - will be replaced with Velite
 const projects = [
@@ -74,6 +75,7 @@ export default async function ProjectPage({ params }: PageProps) {
   }
 
   return (
+    <PageLayout>
     <div className="mx-auto max-w-3xl px-6 py-20">
       <Link
         href="/projects"
@@ -133,5 +135,6 @@ export default async function ProjectPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: project.content }}
       />
     </div>
+    </PageLayout>
   );
 }

@@ -1,23 +1,8 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  webpack: (config) => {
-    config.plugins.push(new VeliteWebpackPlugin());
-    return config;
-  },
+  // Empty turbopack config to use Turbopack (Next.js 16 default)
+  turbopack: {},
 };
-
-class VeliteWebpackPlugin {
-  static started = false;
-  apply(compiler: { hooks: { beforeCompile: { tapPromise: (name: string, fn: () => Promise<void>) => void } } }) {
-    compiler.hooks.beforeCompile.tapPromise('VeliteWebpackPlugin', async () => {
-      if (VeliteWebpackPlugin.started) return;
-      VeliteWebpackPlugin.started = true;
-      const dev = process.argv.includes('dev');
-      const { build } = await import('velite');
-      await build({ watch: dev, clean: !dev });
-    });
-  }
-}
 
 export default nextConfig;

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { PageLayout } from '@/components/PageLayout';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -22,6 +23,7 @@ const posts = [
 
 export default function BlogPage() {
   return (
+    <PageLayout>
     <div className="mx-auto max-w-3xl px-6 py-20">
       <h1 className="mb-4 text-4xl font-bold tracking-tight text-foreground">
         Blog
@@ -77,5 +79,6 @@ export default function BlogPage() {
         </p>
       )}
     </div>
+    </PageLayout>
   );
 }
