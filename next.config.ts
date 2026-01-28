@@ -1,7 +1,23 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  webpack: (config) => {
+    config.plugins.push(new VeliteWebpackPlugin());
+    return config;
+  },
 };
+
+class VeliteWebpackPlugin {
+  static started = false;
+  apply(compiler: { hooks: { beforeCompile: { tapPromise: (name: string, fn: () => Promise<void>) => void } } }) {
+    compiler.hooks.beforeCompile.tapPromise('VeliteWebpackPlugin', async () => {
+      if (VeliteWebpackPlugin.started) return;
+      VeliteWebpackPlugin.started = true;
+      const dev = process.argv.includes('dev');
+      const { build } = await import('velite');
+      await build({ watch: dev, clean: !dev });
+    });
+  }
+}
 
 export default nextConfig;
