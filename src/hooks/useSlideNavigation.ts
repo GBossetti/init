@@ -8,11 +8,67 @@ export function useSlideNavigation() {
   const { goToNext, goToPrevious, setCurrentSlide } = useSlideContext();
   const isScrolling = useRef(false);
   const touchStartY = useRef(0);
+  const wheelTimeout = useRef<NodeJS.Timeout | null>(null);
+  const accumulatedDelta = useRef(0);
+
+  // Wheel navigation - intercept and use smooth scrolling
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      // Prevent default scroll behavior
+      e.preventDefault();
+
+      if (isScrolling.current) return;
+
+      // Accumulate delta for trackpad users who scroll in small increments
+      accumulatedDelta.current += e.deltaY;
+
+      // Clear previous timeout
+      if (wheelTimeout.current) {
+        clearTimeout(wheelTimeout.current);
+      }
+
+      // Debounce: wait for scroll to settle, then navigate
+      wheelTimeout.current = setTimeout(() => {
+        const threshold = 50;
+
+        if (Math.abs(accumulatedDelta.current) > threshold) {
+          isScrolling.current = true;
+
+          if (accumulatedDelta.current > 0) {
+            goToNext();
+          } else {
+            goToPrevious();
+          }
+
+          // Reset after animation completes
+          setTimeout(() => {
+            isScrolling.current = false;
+          }, 700);
+        }
+
+        accumulatedDelta.current = 0;
+      }, 50);
+    };
+
+    // Find the slide container and attach wheel listener
+    const container = document.querySelector('.slide-container');
+    if (container) {
+      container.addEventListener('wheel', handleWheel as EventListener, { passive: false });
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener('wheel', handleWheel as EventListener);
+      }
+      if (wheelTimeout.current) {
+        clearTimeout(wheelTimeout.current);
+      }
+    };
+  }, [goToNext, goToPrevious]);
 
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Don't navigate if user is typing in an input
       if (
         e.target instanceof HTMLInputElement ||
         e.target instanceof HTMLTextAreaElement
@@ -63,7 +119,7 @@ export function useSlideNavigation() {
 
       const touchEndY = touch.clientY;
       const diff = touchStartY.current - touchEndY;
-      const threshold = 50; // Minimum swipe distance
+      const threshold = 50;
 
       if (Math.abs(diff) > threshold) {
         isScrolling.current = true;
@@ -72,10 +128,9 @@ export function useSlideNavigation() {
         } else {
           goToPrevious();
         }
-        // Reset scrolling flag after animation
         setTimeout(() => {
           isScrolling.current = false;
-        }, 800);
+        }, 700);
       }
     },
     [goToNext, goToPrevious]
