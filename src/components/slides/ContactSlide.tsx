@@ -58,7 +58,7 @@ export function ContactSlide() {
         {/* Footer credits */}
         <div className="mt-20 pt-8 border-t border-border">
           <p className="text-sm text-foreground-muted">
-            Designed & Built by Gonzalo Bossetti Marín
+            Designed & Built by Gonzalo Bossetti.
           </p>
         </div>
       </div>

@@ -37,7 +37,7 @@ export function HeroSlide() {
             transition={{ delay: 0.4 }}
             className="text-3xl font-bold tracking-tight text-foreground-muted sm:text-4xl md:text-5xl lg:text-6xl"
           >
-            Architecting Social Impact Tech.
+            Architecting social impact.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

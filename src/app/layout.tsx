@@ -15,25 +15,25 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Gonzalo Bossetti Marín | Software Developer',
-    template: '%s | Gonzalo Bossetti Marín',
+    default: 'Gonzalo Bossetti | Software Developer',
+    template: '%s | Gonzalo Bossetti',
   },
   description:
     'Software developer passionate about building quality software. Sharing knowledge and projects.',
   keywords: ['software developer', 'web development', 'portfolio', 'blog'],
-  authors: [{ name: 'Gonzalo Bossetti Marín' }],
-  creator: 'Gonzalo Bossetti Marín',
+  authors: [{ name: 'Gonzalo Bossetti' }],
+  creator: 'Gonzalo Bossetti',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'Gonzalo Bossetti Marín',
-    title: 'Gonzalo Bossetti Marín | Software Developer',
+    siteName: 'Gonzalo Bossetti',
+    title: 'Gonzalo Bossetti | Software Developer',
     description:
       'Software developer passionate about building quality software. Sharing knowledge and projects.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gonzalo Bossetti Marín | Software Developer',
+    title: 'Gonzalo Bossetti | Software Developer',
     description:
       'Software developer passionate about building quality software. Sharing knowledge and projects.',
   },
