@@ -31,15 +31,19 @@ export function AboutSlide() {
 
             <div className="space-y-4 text-foreground-muted">
               <p className="text-lg leading-relaxed">
-                Hi! I&apos;m{' '}
-                <span className="text-foreground">Gonzalo Bossetti Marín</span>,
-                a software developer who enjoys building things that live on the
-                internet and sharing what I learn along the way.
+                Hello! I&apos;m{' '}
+                <span className="text-foreground">Gonzalo Bossetti</span>,
+                I&apos;m currently focused on designing human-centered 
+                products that solve real and dailyproblems.
+                My approach bridges engineering rigor with social impact, 
+                ensuring that technology is not only scalable, 
+                but responsible and usable.
               </p>
-              <p className="leading-relaxed">
-                Today, my main focus is on building accessible, inclusive products
-                and digital experiences. I&apos;m passionate about writing clean,
-                maintainable code and continuously learning new technologies.
+              <p className="text-lg leading-relaxed">
+                I don&apos;t just build software.
+              </p>
+              <p className="text-lg leading-relaxed">
+                I help define what should be built, why, and how to validate it early.
               </p>
             </div>
           </div>

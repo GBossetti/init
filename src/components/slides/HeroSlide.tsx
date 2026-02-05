@@ -21,7 +21,7 @@ export function HeroSlide() {
             transition={{ delay: 0.2 }}
             className="font-mono text-accent"
           >
-            Hi, my name is
+            Hi, wellcome. I&apos;m 
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -29,7 +29,7 @@ export function HeroSlide() {
             transition={{ delay: 0.3 }}
             className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Gonzalo Bossetti Marín.
+            Gonzalo Bossetti
           </motion.h1>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ export function HeroSlide() {
             transition={{ delay: 0.4 }}
             className="text-3xl font-bold tracking-tight text-foreground-muted sm:text-4xl md:text-5xl lg:text-6xl"
           >
-            I build things for the web.
+            Architecting Social Impact Tech.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -45,10 +45,12 @@ export function HeroSlide() {
             transition={{ delay: 0.5 }}
             className="max-w-xl text-lg text-foreground-muted"
           >
-            I&apos;m a software developer passionate about creating quality
-            software and sharing knowledge. Currently focused on building
-            accessible, human-centered products.
-          </motion.p>
+            I work at the intersection of high-level engineering 
+            and human-centered problem solving.
+            If you&apos;re facing a complex challenge and need to 
+            turn it into a reliable digital product, 
+            this is where we start.
+            </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -57,7 +59,7 @@ export function HeroSlide() {
             className="flex items-center gap-4 pt-6"
           >
             <Link
-              href="https://github.com/yourusername"
+              href="https://github.com/GBossetti"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground-muted transition-colors hover:text-accent"
@@ -66,7 +68,7 @@ export function HeroSlide() {
               <Github size={24} />
             </Link>
             <Link
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/gonzalo-bossetti/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground-muted transition-colors hover:text-accent"
