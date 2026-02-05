@@ -20,20 +20,22 @@ export function ContactSlide() {
             Get In Touch
           </h2>
           <p className="mx-auto max-w-lg text-foreground-muted">
-            I&apos;m currently open to new opportunities. Whether you have a
-            question or just want to say hi, feel free to reach out!
+            Whether you&apos;re 
+            looking to turn a complex problem into a working 
+            MVP or simply want to stay in touch, reach out 
+            through the channels below.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 pt-4">
             <Link
-              href="mailto:your.email@example.com"
+              href="mailto:gonzalo.bossetti@gmail.com"
               className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-foreground-muted transition-colors hover:border-accent hover:text-accent"
             >
               <Mail size={18} />
               Email me
             </Link>
             <Link
-              href="https://github.com/yourusername"
+              href="https://github.com/GBossetti"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-foreground-muted transition-colors hover:border-accent hover:text-accent"
@@ -42,7 +44,7 @@ export function ContactSlide() {
               GitHub
             </Link>
             <Link
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/gonzalo-bossetti/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3 text-foreground-muted transition-colors hover:border-accent hover:text-accent"

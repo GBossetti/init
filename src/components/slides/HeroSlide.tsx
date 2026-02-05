@@ -45,12 +45,19 @@ export function HeroSlide() {
             transition={{ delay: 0.5 }}
             className="max-w-xl text-lg text-foreground-muted"
           >
-            I work at the intersection of high-level engineering 
-            and human-centered problem solving.
-            If you&apos;re facing a complex challenge and need to 
-            turn it into a reliable digital product, 
-            this is where we start.
-            </motion.p>
+            I work at the intersection of high-level engineering and 
+            human-centered problem solving. If you&apos;re facing a complex 
+            challenge and need to turn it into a reliable digital product, 
+            this is where{' '}
+            <button
+              type="button"
+              onClick={() => goToSlide('contact')}
+              className="font-medium text-accent underline-offset-4 hover:underline cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
+              we start
+            </button>
+            .
+          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

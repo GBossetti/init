@@ -4,15 +4,12 @@ import { motion } from 'framer-motion';
 import { Slide } from './Slide';
 
 const skills = [
-  'JavaScript (ES6+)',
-  'TypeScript',
-  'React',
-  'Next.js',
-  'Node.js',
-  'Tailwind CSS',
-  'Git',
-  'HTML & CSS',
+  'Java',
+  'Python',
   'SQL',
+  'Docker',
+  'Kubernetes',
+  'Git'
 ];
 
 export function AboutSlide() {
@@ -32,18 +29,18 @@ export function AboutSlide() {
             <div className="space-y-4 text-foreground-muted">
               <p className="text-lg leading-relaxed">
                 Hello! I&apos;m{' '}
-                <span className="text-foreground">Gonzalo Bossetti</span>,
+                <span className="text-foreground">Gonzalo</span>,
                 I&apos;m currently focused on designing human-centered 
-                products that solve real and dailyproblems.
+                products that solve real, everyday problems.
                 My approach bridges engineering rigor with social impact, 
                 ensuring that technology is not only scalable, 
-                but responsible and usable.
+                but also responsible and usable.
               </p>
               <p className="text-lg leading-relaxed">
                 I don&apos;t just build software.
               </p>
               <p className="text-lg leading-relaxed">
-                I help define what should be built, why, and how to validate it early.
+                I help define what should be built and how to validate it early.
               </p>
             </div>
           </div>
